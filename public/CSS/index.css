@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+}
+
+.estilo-formulario {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.estilo-formulario input {
+    margin: .5rem 0;
+}
+
+.estilo-formulario button {
+    border: 1px solid #fff;
+    color: #fff;
+    width: 10rem;
+}
+
+.estilo-formulario button:hover {
+    color: #f00;
+}
+
+.estilo-formulario a button {
+    border: 1px solid #f00;
+    color: #f00;
+    width: 8rem;
+}
+
+.estilo-formulario a button:hover {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.validacion:valid {
+    outline: 2px solid #5eb65e;
+}
+.validacion:invalid {
+    outline: 2px solid #db5757;
+}
+
+.check-switch input {
+    width: 10%;
+}
+
+.check-switch label {
+    font-size: 0.8rem;
+    color: #fff;
+}

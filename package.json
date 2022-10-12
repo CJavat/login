@@ -1,0 +1,26 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "PRACTICA DE UN LOGIN YA CON SERVIDOR.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CJavat/login.git"
+  },
+  "author": "CJAVAT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CJavat/login/issues"
+  },
+  "homepage": "https://github.com/CJavat/login#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "serve-favicon": "^2.5.0"
+  }
+}

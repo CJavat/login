@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/IMG/favicon.ico" type="image/x-icon">
+        <!-- SCRIPT BOOTSTRAP -->
+        <script src="/JS/bootstrap.bundle.min.js"></script>
+        <!-- CSS BOOTSTRAP -->
+        <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="./CSS/index.css">
+        <title>REGISTRARSE</title>
+    </head>
+    <body>
+        <div class="container bg-dark vh-100 d-flex justify-content-center align-items-center">
+            <div class="container-login d-flex align-items-center col-12 col-md-10 col-lg-8 col-xl-6 col-xxl-6 d-flex flex-column p-2 border border-info rounded" id="container-form">
+                <div class="container-head mb-3 text-center" id="container-head">
+                    <img src="./IMG/user.png" alt="user" class="logo-user rounded-circle mt-5 mb-2" id="logo-user">
+                    <h2 class="title text-light" id="logo">REGISTRO</h2>
+                </div>
+                <form action="/api/registro-usuarios" method="POST" id="registrar-usuario" class="estilo-formulario d-flex flex-column flex-nowrap" required>
+                    <input type="text" class="validacion form-control" id="form-name" name="form-name" placeholder="ESCRIBE TU NOMBRE" pattern="[A-Za-z]{3,40}" title="ESTE CAMPO SOLO ACEPTA LETRAS" required>
+                    <input type="text" class="validacion form-control" id="form-lastname" name="form-lastname" placeholder="ESCRIBE TU APELLIDO" pattern="[A-Za-z]{3,40}" title="ESTE CAMPO SOLO ACEPTA LETRAS" required>
+                    <input type="text" class="validacion form-control" id="form-user" name="form-user" placeholder="ESCRIBE TU NICKNAME" pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
+                    <input type="password" class="validacion form-control" id="form-password" name="form-password" placeholder="ESCRIBE TU CONTRASEÑA" pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
+                    <input type="password" class="validacion form-control" id="form-confirm-password" name="form-confirm-password" placeholder="CONFIRMA TU CONTRASEÑA" pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
+                    <div id="check-switch" class="check-switch form-check form-switch">
+                        <input type="checkbox" id="flexSwitchCheckDefault" role="switch" class="form-check-input">
+                        <label class="form-check-label">Mostrar contraseña</label>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-between mb-3">
+                        <button type="submit" id="enviar-datos" class="enviar-datos btn"> REGISTRAR </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- SCRIPT -->
+        <script type="module" src="./JS/index.js"></script>
+    </body>
+</html>
