@@ -2,11 +2,46 @@ const express = require('express');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const app = express();
+const httpServer = require('http').createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(httpServer);
 const usuariosRoutes = require('./routes/usuarios.routes').router;
+const { eventoPrueba } = require('./controlles/usuarios.controller');
+
+
+let userError = false, passwordError = false;
+eventoPrueba.on('datos', (e) => {
+    //! user: CJAVAT 
+    //! password: 123Javato
+    
+    console.log('evento: datos');
+    if(e === 'USUARIO INCORRECTO') {
+        userError = true;
+    }
+    else if(e === 'CONTRASEÑA INCORRECTO') {
+        passwordError = true;
+    }
+    else if(e === 'INICIANDO SESIÓN') {
+        console.log("Si se esta iniciando sesión");
+    }
+});
+
+io.on('connection', (socket) => {
+    console.log("Conexión establecida... " + socket.id);
+    if(userError == true) {
+        io.emit('Server: USER ERROR');
+        userError = false;
+    }
+    else if(passwordError == true) {
+        io.emit('Server: PASSWORD ERROR');
+        passwordError = false;
+    }
+});
 
 //* AGREGAR PÁGINA ESTÁTICA.
 app.use(express.static('public'));
 app.use('/registrar-usuarios', express.static('registrar-usuarios'));
+app.use('/inicio', express.static('inicio'));
 
 //* AGREGAR FAVICON A TODAS LAS PÁGINAS.
 app.use(favicon('public/IMG/favicon.ico'));
@@ -30,6 +65,6 @@ app.use(express.json());
 //* PARA USAR LAS RUTAS.
 app.use('/api', usuariosRoutes);
 
-app.listen(5000, () => {
+httpServer.listen(5000, () => {
     console.log("CORRIENDO EN EL PUERTO 5000...");
 });

@@ -1,3 +1,4 @@
+const socket = io();
 const inputName = document.getElementById('form-name');
 const inputLastName = document.getElementById('form-lastname');
 const inputUser = document.getElementById('form-user');

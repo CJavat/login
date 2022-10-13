@@ -32,6 +32,10 @@ body {
     color: #f00;
 }
 
+.estilo-formulario button:focus {
+    color: #fff;
+}
+
 .estilo-formulario a button {
     border: 1px solid #f00;
     color: #f00;

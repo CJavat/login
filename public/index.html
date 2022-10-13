@@ -19,8 +19,8 @@
                     <h2 class="title text-light" id="logo">INICIAR SESIÓN</h2>
                 </div>
                 <form action="/api/users" method="POST" id="login-form" class="estilo-formulario">
-                    <input type="text" class="form-control form-user validacion" id="form-user" name="form-user" placeholder="Escribe tu usuario." pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
-                    <input type="password" class="form-control form-password validacion" id="form-password" name="form-password" placeholder="Escribe tu contraseña." pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
+                    <input type="text" class="form-control form-user validacion" id="form-user" name="form_user" placeholder="Escribe tu usuario." pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
+                    <input type="password" class="form-control form-password validacion" id="form-password" name="form_password" placeholder="Escribe tu contraseña." pattern="[A-Za-z0-9]{6,10}" title="EL CAMPO SOLO ACEPTA LETRAS Y NÚMEROS Y SU LONGITUD DEBE SER DE 6 A 10 CARACTERES." required>
                     <div id="check-switch" class="check-switch form-check form-switch">
                         <input type="checkbox" id="flexSwitchCheckDefault" role="switch" class="form-check-input">
                         <label class="form-check-label">Mostrar contraseña</label>
@@ -35,7 +35,9 @@
 
         <!-- SCRIPT BOOTSTRAP -->
         <script src="/JS/bootstrap.bundle.min.js"></script>
+        <!-- SOCKET.IO -->
+        <script src="/socket.io/socket.io.js"></script>
         <!-- SCRIPT -->
-        <script type="module" src="/JS/index.js"></script>
+        <script type="module" src="./JS/index.js"></script>
     </body>
 </html>
