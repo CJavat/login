@@ -47,3 +47,10 @@ body {
 .validacion:invalid {
     outline: 2px solid #db5757;
 }
+
+.valido {
+    outline: 2px solid #5eb65e !important;
+}
+.no-valido {
+    outline: 2px solid #db5757 !important; 
+}

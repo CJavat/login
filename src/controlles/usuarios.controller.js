@@ -8,9 +8,11 @@ const getUsers = async (req, res) => {
     res.json(rows);
 };
 
-const putUsers = async (req, res) => {
-
+const putRegisterUsers = async (req, res) => {
+    const { form_name, form_lastname, form_user, form_password } = req.body;
+    console.log(form_name,form_lastname,form_user,form_password);
+    
 };
 
 module.exports.getUsers = getUsers;
-module.exports.putUsers = putUsers;
+module.exports.putRegisterUsers = putRegisterUsers;
