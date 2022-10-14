@@ -17,8 +17,9 @@ const postUsers = async (req, res) => {
         if(row.user_nickname == form_user && row.password == form_password) {
             banderaErrorUser = false;
             banderaErrorPassword = false;
-            eventoPrueba.emit('datos', 'INICIANDO SESIÓN');
-            res.redirect('/inicio'); //! MANDAR AL INICIO DEL PERFIL.
+            eventoPrueba.emit('datos', 'INICIANDO SESIÓN', form_user);
+            
+            res.redirect('/inicio');
             break;
         }
         else if(row.user_nickname == form_user) {

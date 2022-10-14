@@ -9,22 +9,23 @@ const usuariosRoutes = require('./routes/usuarios.routes').router;
 const { eventoPrueba } = require('./controlles/usuarios.controller');
 
 
-let userError = false, passwordError = false;
-eventoPrueba.on('datos', (e) => {
+let userError = false, passwordError = false, inicioSesion = false, user = '';
+eventoPrueba.on('datos', (mensaje, userReceived) => {
     //! user: CJAVAT 
     //! password: 123Javato
     
-    console.log('evento: datos');
-    if(e === 'USUARIO INCORRECTO') {
+    if(mensaje === 'USUARIO INCORRECTO') {
         userError = true;
     }
-    else if(e === 'CONTRASEÑA INCORRECTO') {
+    else if(mensaje === 'CONTRASEÑA INCORRECTO') {
         passwordError = true;
     }
-    else if(e === 'INICIANDO SESIÓN') {
-        console.log("Si se esta iniciando sesión");
+    else if(mensaje === 'INICIANDO SESIÓN') {
+        inicioSesion = true;
+        user = userReceived;
     }
 });
+module.exports.user = user;
 
 io.on('connection', (socket) => {
     console.log("Conexión establecida... " + socket.id);
@@ -35,6 +36,10 @@ io.on('connection', (socket) => {
     else if(passwordError == true) {
         io.emit('Server: PASSWORD ERROR');
         passwordError = false;
+    }
+    else if(inicioSesion = true) {
+        io.emit('Server: Inicio Sesion', user);
+        inicioSesion = false;
     }
 });
 

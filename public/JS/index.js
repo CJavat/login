@@ -4,14 +4,7 @@ const inputPassword = document.getElementById('form-password');
 const checkSwitch = document.getElementById('check-switch');
 const btnEnviarDatos = document.getElementById('enviar-datos');
 
-let switchActivado = false, contadorCaracteresUsuario = 0;
-
-inputUser.addEventListener('keydown', (evt)=> {
-    // socket.emit('client: prueba');
-    // console.log("Hola");
-});
-
-inputPassword.addEventListener('', ()=> {});
+let switchActivado = false;
 
 checkSwitch.addEventListener("change", () => {
     if(switchActivado === false) {
